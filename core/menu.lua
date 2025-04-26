@@ -4,7 +4,6 @@ function MenuPager.show(id, titleKey, optionKeys, callback)
     local page = MenuPager[id] and MenuPager[id].page or 1
     local perPage = 9
     local totalPages = math.ceil(#optionKeys / perPage)
-
     MenuPager[id] = {
         titleKey = titleKey,
         options = optionKeys,
@@ -13,17 +12,18 @@ function MenuPager.show(id, titleKey, optionKeys, callback)
         totalPages = totalPages
     }
 
-    MenuPager.update(id)
+    MenuPager.update(id, MenuPager[id])
 end
 
-function MenuPager.update(id)
+function MenuPager.update(id, data)
     local data = MenuPager[id]
     if not data then return end
 
-    local title = Lang.get(id, data.titleKey) .. " [" .. data.page .. "/" .. data.totalPages .. "]"
+    local translatedTitle = Lang.get(id, data.titleKey)
+    local title = translatedTitle .. " [" .. data.page .. "/" .. data.totalPages .. "]"
     local start = (data.page - 1) * 9 + 1
     local options = {}
-
+    
     for i = start, math.min(start + 8, #data.options) do
         table.insert(options, Lang.get(id, data.options[i]))
     end
@@ -46,7 +46,6 @@ function MenuPager.handleClick(id, title, button)
     local data = MenuPager[id]
     if not data then return end
 
-    -- Menü başlığı uyuşuyorsa
     if not string.find(title, Lang.get(id, data.titleKey)) then return end
 
     local index = (data.page - 1) * 9 + button
@@ -55,10 +54,9 @@ function MenuPager.handleClick(id, title, button)
     end
 end
 
--- CS2D Menu Formatına dönüştürür
 function MenuPager.menuFromTable(id, title, options)
     local arg = title
-    for i = 1, math.min(#options, 9) do
+    for i = 1, #options do
         arg = arg .. "," .. options[i]
     end
     menu(id, arg)
@@ -71,11 +69,27 @@ addbind("mwheeldown")
 -- Scroll ile sayfa değiştirme
 addhook("key", "onMenuPagerScroll")
 function onMenuPagerScroll(id, key)
-    if not MenuPager[id] then return end
+    local data = MenuPager[id]
+    if not data then return end -- Aktif menu yoksa scroll iptal
 
     if key == "mwheelup" then
         MenuPager.changePage(id, -1)
     elseif key == "mwheeldown" then
         MenuPager.changePage(id, 1)
+    end
+end
+
+-- Menüde bir şey tıklanınca
+addhook("menu", "onMenuPagerClick")
+function onMenuPagerClick(id, title, button)
+    if button == 0 then return end -- 0'a basıldıysa (kapattıysa) işleme gerek yok
+    MenuPager.handleClick(id, title, button)
+end
+
+-- Menü kapatıldığında aktif kaydı silelim
+addhook("menu", "onMenuPagerMenuClose")
+function onMenuPagerMenuClose(id, title, button)
+    if button == 0 then
+        MenuPager[id] = nil
     end
 end

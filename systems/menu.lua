@@ -27,21 +27,23 @@ end
 function onMainMenuSelect(id, index)
     local optionKeys = {
         "menu_stats",
-        nil,
+        "menu_empty",
         "menu_inventory",
         "menu_equipment",
-        nil,
+        "menu_empty",
         "menu_quests",
         "menu_depot",
         "menu_market",
-        nil,
+        "menu_empty",
         "menu_status",
-        nil,
+        "menu_empty",
         "menu_language"
     }
 
     local key = optionKeys[index]
-    if not key then return end
+    if not key or key == "menu_empty" then
+        return -- boş tuşa tıkladıysa hiçbir şey yapma
+    end
 
     local messages = {
         menu_stats = "menu_char_coming_soon",
@@ -56,19 +58,23 @@ function onMainMenuSelect(id, index)
     if key == "menu_language" then
         openLanguageMenu(id)
     elseif key == "menu_stats" then
-        openStatsMenu(id) -- stats sistemi ileride buradan çalışacak
+        openStatsMenu(id)
     elseif messages[key] then
         sendMessage(id, "info", Lang.get(id, messages[key]))
     end
 end
 
+
 -- Dil Seçim Menüsü
 function openLanguageMenu(id)
+    MenuPager[id] = nil -- Önce eski menü kaydını sil
     MenuPager.show(id, "menu_language", {
         "language_turkish",
         "language_english"
     }, onLanguageSelect)
 end
+
+
 
 -- Dil Menüsünde Seçim Yapıldıysa
 function onLanguageSelect(id, index)

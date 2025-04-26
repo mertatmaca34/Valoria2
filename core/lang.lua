@@ -14,6 +14,7 @@ end
 -- Bir oyuncunun dilini ayarlar
 function Lang.setPlayerLang(id, langCode)
     Lang.PlayerLang[id] = langCode
+    PLAYER_DATA[id].lang = langCode
 end
 
 -- Bir oyuncunun dil kodunu getirir (yoksa 'tr' default)
