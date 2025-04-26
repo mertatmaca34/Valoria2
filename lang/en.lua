@@ -1,6 +1,14 @@
 Lang.addPack("en", {
+    -- Welcome
     welcome = "Welcome to Valoria 2.0!",
-    
+
+    -- Caption Titles
+    caption_info = "[INFO]: ",
+    caption_warning = "[WARNING]: ",
+    caption_error = "[ERROR]: ",
+    caption_success = "[SUCCESS]: ",
+    caption_system = "[SYSTEM]: ",
+
     -- Menu Titles
     menu_main_title = "Main Menu",
     menu_stats = "My Stats",
@@ -11,9 +19,9 @@ Lang.addPack("en", {
     menu_market = "Online Market",
     menu_status = "Status",
     menu_language = "Language",
-    menu_empty = "---------",
+    menu_empty = "",
 
-    -- Menu Messages
+    -- Menu Information Messages
     menu_char_coming_soon = "Character screen coming soon.",
     menu_inventory_inactive = "Inventory system is not active.",
     menu_equipment_coming_soon = "Equipment screen coming soon.",
@@ -30,16 +38,16 @@ Lang.addPack("en", {
     lang_set_tr = "Language set to Turkish.",
     lang_set_en = "Language set to English.",
 
-    -- Stats
+    -- Stat Names
     stat_hp = "HP",
     stat_attack = "Attack",
     stat_defense = "Defense",
     stat_speed = "Speed",
-    stat_crit = "Crit Chance",
+    stat_crit = "Critical Chance",
     remaining_points = "Remaining Points",
 
-    -- Stat Messages
-    no_stat_point = "You don't have any stat points!",
-    max_stat_limit = "This stat is already maxed!",
-    stat_upgraded = "Upgraded: "
+    -- Stat Information Messages
+    no_stat_point = "You don't have enough stat points!",
+    max_stat_limit = "This stat is already at maximum!",
+    stat_upgraded = "Upgrade: "
 })
