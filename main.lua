@@ -1,0 +1,1 @@
+dofile("sys/lua/Valoria2/core/lang.lua")
