@@ -11,7 +11,7 @@ return {
   ["exp"] = 0,
   ["depot"] = {
   },
-  ["statPoints"] = 0,
+  ["statPoints"] = 30,
   ["lang"] = "en",
   ["invCapacity"] = 20,
   ["equipment"] = {

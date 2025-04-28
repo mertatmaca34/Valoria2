@@ -32,4 +32,20 @@ function onPlayerSpawn(id)
     if x and y then
         parse("setpos " .. id .. " " .. x .. " " .. y)
     end
+
+    applyStats(id)
+end
+
+function applyStats(id)
+    local data = PLAYER_DATA[id]
+    if not data then return end
+
+    -- HP etkisi
+    local baseHealth = 100
+    local extraHealth = (data.stats.hp or 0) * 6.25
+    parse("setmaxhealth " .. id .. " " .. math.floor(baseHealth + extraHealth))
+
+    -- Speed etkisi
+    local baseSpeed = data.stats.speed or Config.BASE_SPEED
+    parse("speedmod " .. id .. " " .. math.floor(baseSpeed))
 end

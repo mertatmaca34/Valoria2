@@ -57,6 +57,7 @@ function upgradeStat(id, button)
     PlayerDataService.save(id)
 
     sendMessage(id, "success", Lang.get(id, "stat_upgraded") .. " " .. string.upper(key) .. " +1")
+    applyStats(id)
 
     -- Menü güncellensin
     openStatsMenu(id)

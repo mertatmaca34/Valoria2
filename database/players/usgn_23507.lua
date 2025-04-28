@@ -3,29 +3,29 @@ return {
   },
   ["stats"] = {
     ["defense"] = 0,
-    ["speed"] = -10,
-    ["hp"] = 1,
+    ["speed"] = 13,
     ["crit"] = 0,
+    ["hp"] = 5,
     ["attack"] = 0,
   },
   ["exp"] = 0,
-  ["equipment"] = {
-  },
-  ["statPoints"] = 2,
-  ["quests"] = {
-  },
-  ["invCapacity"] = 20,
   ["depot"] = {
   },
-  ["pazar"] = {
+  ["statPoints"] = 0,
+  ["lang"] = "tr",
+  ["invCapacity"] = 20,
+  ["equipment"] = {
   },
   ["gold"] = 0,
   ["position"] = {
-    ["y"] = 359.7604675293,
-    ["x"] = 529.23712158203,
+    ["y"] = 321.9992980957,
+    ["x"] = 346.099609375,
+  },
+  ["pazar"] = {
   },
   ["status"] = "idle",
   ["level"] = 1,
-  ["lang"] = "tr",
+  ["quests"] = {
+  },
   ["depotUnlocked"] = false,
 }

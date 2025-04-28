@@ -57,7 +57,6 @@ end
 -- Veriyi kaydeder
 function PlayerDataService.save(id)
     local data = PLAYER_DATA[id]
-    msg(data.position.x)
     if not data then return end
 
     local key = PlayerDataService.getPlayerKey(id)
