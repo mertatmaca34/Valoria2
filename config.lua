@@ -50,8 +50,8 @@ Config.ItemDefinitions = {
         type = "weapon",
         stackable = false,
         bonuses = { attack = 3 },
-        groundSprite = "gfx/valoria/items/iron_sword_ground.png",
-        equippedSprite = "gfx/valoria/items/iron_sword_equipped.png",
+        groundSprite = "Valoria\\gfx\\valoria\\items\\iron_sword_ground.png",
+        equippedSprite = "Valoria\\gfx\\valoria\\items\\iron_sword_equipped.png",
         equippedOffset = { x = 6, y = -2 }
     },
     leather_armor = {
@@ -61,8 +61,8 @@ Config.ItemDefinitions = {
         type = "armor",
         stackable = false,
         bonuses = { defense = 2, hp = 1 },
-        groundSprite = "gfx/valoria/items/leather_armor_ground.png",
-        equippedSprite = "gfx/valoria/items/leather_armor_equipped.png",
+        groundSprite = "Valoria\\gfx\\valoria\\items\\leather_armor_ground.png",
+        equippedSprite = "Valoria\\gfx\\valoria\\items\\leather_armor_equipped.png",
         equippedOffset = { x = 0, y = 6 }
     },
     forest_amulet = {
@@ -72,8 +72,8 @@ Config.ItemDefinitions = {
         type = "accessory",
         stackable = false,
         bonuses = { crit = 2, speed = 1 },
-        groundSprite = "gfx/valoria/items/forest_amulet_ground.png",
-        equippedSprite = "gfx/valoria/items/forest_amulet_equipped.png",
+        groundSprite = "Valoria\\gfx\\valoria\\items\\forest_amulet_ground.png",
+        equippedSprite = "Valoria\\gfx\\valoria\\items\\forest_amulet_equipped.png",
         equippedOffset = { x = 2, y = -10 }
     },
     potion_small = {
@@ -83,8 +83,8 @@ Config.ItemDefinitions = {
         type = "consumable",
         stackable = true,
         bonuses = { heal = 35 },
-        groundSprite = "gfx/valoria/items/potion_small_ground.png",
-        equippedSprite = "gfx/valoria/items/potion_small_equipped.png",
+        groundSprite = "Valoria\\gfx\\valoria\\items\\potion_small_ground.png",
+        equippedSprite = "Valoria\\gfx\\valoria\\items\\potion_small_equipped.png",
         equippedOffset = { x = -4, y = 4 }
     },
     herb_green = {
@@ -94,8 +94,8 @@ Config.ItemDefinitions = {
         type = "material",
         stackable = true,
         bonuses = {},
-        groundSprite = "gfx/valoria/items/herb_green_ground.png",
-        equippedSprite = "gfx/valoria/items/herb_green_equipped.png",
+        groundSprite = "Valoria\\gfx\\valoria\\items\\herb_green_ground.png",
+        equippedSprite = "Valoria\\gfx\\valoria\\items\\herb_green_equipped.png",
         equippedOffset = { x = 0, y = 0 }
     },
     wolf_pelt = {
@@ -105,8 +105,8 @@ Config.ItemDefinitions = {
         type = "material",
         stackable = true,
         bonuses = {},
-        groundSprite = "gfx/valoria/items/wolf_pelt_ground.png",
-        equippedSprite = "gfx/valoria/items/wolf_pelt_equipped.png",
+        groundSprite = "Valoria\\gfx\\valoria\\items\\wolf_pelt_ground.png",
+        equippedSprite = "Valoria\\gfx\\valoria\\items\\wolf_pelt_equipped.png",
         equippedOffset = { x = 2, y = 6 }
     },
     goblin_ear = {
@@ -116,8 +116,8 @@ Config.ItemDefinitions = {
         type = "material",
         stackable = true,
         bonuses = {},
-        groundSprite = "gfx/valoria/items/goblin_ear_ground.png",
-        equippedSprite = "gfx/valoria/items/goblin_ear_equipped.png",
+        groundSprite = "Valoria\\gfx\\valoria\\items\\goblin_ear_ground.png",
+        equippedSprite = "Valoria\\gfx\\valoria\\items\\goblin_ear_equipped.png",
         equippedOffset = { x = -2, y = 6 }
     }
 }
@@ -137,21 +137,21 @@ Config.NPCDefinitions = {
         id = "healer",
         nameKey = "npc_healer_name",
         dialogueKey = "npc_healer_dialogue",
-        sprite = "gfx/valoria/npcs/healer.png",
+        sprite = "Valoria\\gfx\\valoria\\npcs\\healer.png",
         position = { x = 180, y = 140 }
     },
     merchant = {
         id = "merchant",
         nameKey = "npc_merchant_name",
         dialogueKey = "npc_merchant_dialogue",
-        sprite = "gfx/valoria/npcs/merchant.png",
+        sprite = "Valoria\\gfx\\valoria\\npcs\\merchant.png",
         position = { x = 188, y = 148 }
     },
     guard = {
         id = "guard",
         nameKey = "npc_guard_name",
         dialogueKey = "npc_guard_dialogue",
-        sprite = "gfx/valoria/npcs/guard.png",
+        sprite = "Valoria\\gfx\\valoria\\npcs\\guard.png",
         position = { x = 172, y = 148 }
     }
 }
@@ -169,7 +169,7 @@ Config.MonsterDefinitions = {
         defense = 2,
         exp = 65,
         gold = 25,
-        sprite = "gfx/valoria/monsters/forest_wolf.png",
+        sprite = "Valoria\\gfx\\valoria\\monsters\\forest_wolf.png",
         drops = {
             { itemId = "wolf_pelt", chance = 60, min = 1, max = 2 },
             { itemId = "herb_green", chance = 25, min = 1, max = 1 }
@@ -183,7 +183,7 @@ Config.MonsterDefinitions = {
         defense = 4,
         exp = 90,
         gold = 40,
-        sprite = "gfx/valoria/monsters/cave_goblin.png",
+        sprite = "Valoria\\gfx\\valoria\\monsters\\cave_goblin.png",
         drops = {
             { itemId = "goblin_ear", chance = 70, min = 1, max = 2 },
             { itemId = "potion_small", chance = 20, min = 1, max = 1 }
