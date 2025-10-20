@@ -16,7 +16,6 @@ Config.DefaultSpawnY = 100
 Config.DefaultInventoryCapacity = 20
 Config.DefaultDepotUnlocked = false
 
--- Temel Savas ve Hareket Ayarlari
 Config.BASE_SPEED = 100
 Config.CombatTagDuration = 8 -- saniye
 Config.LevelStatReward = 5
@@ -25,7 +24,11 @@ Config.LevelStatReward = 5
 Config.MarketPriceOptions = {50, 100, 250, 500}
 Config.MarketStorageFile = "sys/lua/Valoria2/database/market.lua"
 
--- Ekipman Slotlari
+-- Market Ayarları
+Config.MarketPriceOptions = {50, 100, 250, 500}
+Config.MarketStorageFile = "sys/lua/Valoria2/database/market.lua"
+
+-- Ekipman Slotları
 Config.EquipmentSlots = {
     weapon = { nameKey = "equip_slot_weapon", type = "weapon" },
     armor = { nameKey = "equip_slot_armor", type = "armor" },
