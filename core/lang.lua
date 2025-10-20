@@ -1,12 +1,12 @@
 Lang = {}
 
--- Tüm kayıtlı diller burada tutulur
+-- Tum kayitli diller burada tutulur
 Lang.Packs = {}
 
--- Her oyuncunun seçili dili burada tutulur
+-- Her oyuncunun secili dili burada tutulur
 Lang.PlayerLang = {}
 
--- Bir dil paketi ekler (dil kodu, dil içeriği)
+-- Bir dil paketi ekler (dil kodu, dil icerigi)
 function Lang.addPack(langCode, pack)
     Lang.Packs[langCode] = pack
 end
@@ -22,20 +22,20 @@ function Lang.getPlayerLang(id)
     return Lang.PlayerLang[id] or "tr"
 end
 
--- Bir oyuncuya göre bir key'in string karşılığını getirir
+-- Bir oyuncuya gore bir key'in string karsiligini getirir
 function Lang.get(id, key)
     local langCode = Lang.getPlayerLang(id)
     local pack = Lang.Packs[langCode]
     return (pack and pack[key]) or "[MISSING: " .. key .. "]"
 end
 
--- Direkt dil koduna göre string getirir (oyuncu id'siz)
+-- Direkt dil koduna gore string getirir (oyuncu id'siz)
 function Lang.getByCode(langCode, key)
     local pack = Lang.Packs[langCode]
     return (pack and pack[key]) or "[MISSING: " .. key .. "]"
 end
 
--- Oyuncu çıkınca dil kaydını temizler (opsiyonel)
+-- Oyuncu cikinca dil kaydini temizler (opsiyonel)
 function Lang.removePlayer(id)
     Lang.PlayerLang[id] = nil
 end

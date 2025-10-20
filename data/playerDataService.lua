@@ -2,7 +2,7 @@ PlayerDataService = {}
 
 PLAYER_DATA = {}
 
--- Oyuncunun dosya anahtarını oluşturur
+-- Oyuncunun dosya anahtarini olusturur
 function PlayerDataService.getPlayerKey(id)
     local usgnid = player(id, "usgn")
     local steamid = player(id, "steamid")
@@ -16,7 +16,7 @@ function PlayerDataService.getPlayerKey(id)
     end
 end
 
--- Varsayılan oyuncu datası oluşturur
+-- Varsayilan oyuncu datasi olusturur
 function PlayerDataService.createDefault()
     return {
         level = 1,
@@ -37,7 +37,7 @@ function PlayerDataService.createDefault()
     }
 end
 
--- Veriyi yükler veya oluşturur
+-- Veriyi yukler veya olusturur
 function PlayerDataService.load(id)
     local key = PlayerDataService.getPlayerKey(id)
     if not key then

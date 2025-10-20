@@ -5,7 +5,7 @@ function onServerAction(id, action)
     end
 end
 
--- Ana Menü Açıcı
+-- Ana Menu Acici
 function openMainMenu(id)
     MenuPager.show(id, "menu_main_title", {
         "menu_stats",
@@ -23,7 +23,7 @@ function openMainMenu(id)
     }, onMainMenuSelect)
 end
 
--- Ana Menüde Bir Şeye Tıklandıysa
+-- Ana Menude Bir Seye Tiklandiysa
 function onMainMenuSelect(id, index)
     local optionKeys = {
         "menu_stats",
@@ -42,32 +42,32 @@ function onMainMenuSelect(id, index)
 
     local key = optionKeys[index]
     if not key or key == "menu_empty" then
-        return -- boş tuşa tıkladıysa hiçbir şey yapma
+        return -- bos tusa tikladiysa hicbir sey yapma
     end
-
-    local messages = {
-        menu_stats = "menu_char_coming_soon",
-        menu_inventory = "menu_inventory_inactive",
-        menu_equipment = "menu_equipment_coming_soon",
-        menu_quests = "menu_quests_not_ready",
-        menu_depot = "menu_depot_not_ready",
-        menu_market = "menu_market_not_ready",
-        menu_status = "menu_status_display"
-    }
 
     if key == "menu_language" then
         openLanguageMenu(id)
     elseif key == "menu_stats" then
         openStatsMenu(id)
-    elseif messages[key] then
-        sendMessage(id, "info", Lang.get(id, messages[key]))
+    elseif key == "menu_inventory" then
+        InventorySystem.openMenu(id)
+    elseif key == "menu_equipment" then
+        EquipmentSystem.openMenu(id)
+    elseif key == "menu_quests" then
+        QuestSystem.openMenu(id)
+    elseif key == "menu_market" then
+        MarketSystem.openMenu(id)
+    elseif key == "menu_status" then
+        StatusSystem.openMenu(id)
+    elseif key == "menu_depot" then
+        sendMessage(id, "info", Lang.get(id, "menu_depot_not_ready"))
     end
 end
 
 
--- Dil Seçim Menüsü
+-- Dil Secim Menusu
 function openLanguageMenu(id)
-    MenuPager[id] = nil -- Önce eski menü kaydını sil
+    MenuPager[id] = nil -- Once eski menu kaydini sil
     MenuPager.show(id, "menu_language", {
         "language_turkish",
         "language_english"
@@ -76,7 +76,7 @@ end
 
 
 
--- Dil Menüsünde Seçim Yapıldıysa
+-- Dil Menusunde Secim Yapildiysa
 function onLanguageSelect(id, index)
     if index == 1 then
         Lang.setPlayerLang(id, "tr")
