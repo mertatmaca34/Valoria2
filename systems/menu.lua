@@ -45,22 +45,22 @@ function onMainMenuSelect(id, index)
         return -- boş tuşa tıkladıysa hiçbir şey yapma
     end
 
-    local messages = {
-        menu_stats = "menu_char_coming_soon",
-        menu_inventory = "menu_inventory_inactive",
-        menu_equipment = "menu_equipment_coming_soon",
-        menu_quests = "menu_quests_not_ready",
-        menu_depot = "menu_depot_not_ready",
-        menu_market = "menu_market_not_ready",
-        menu_status = "menu_status_display"
-    }
-
     if key == "menu_language" then
         openLanguageMenu(id)
     elseif key == "menu_stats" then
         openStatsMenu(id)
-    elseif messages[key] then
-        sendMessage(id, "info", Lang.get(id, messages[key]))
+    elseif key == "menu_inventory" then
+        InventorySystem.openMenu(id)
+    elseif key == "menu_equipment" then
+        EquipmentSystem.openMenu(id)
+    elseif key == "menu_quests" then
+        QuestSystem.openMenu(id)
+    elseif key == "menu_market" then
+        MarketSystem.openMenu(id)
+    elseif key == "menu_status" then
+        StatusSystem.openMenu(id)
+    elseif key == "menu_depot" then
+        sendMessage(id, "info", Lang.get(id, "menu_depot_not_ready"))
     end
 end
 
