@@ -1,14 +1,20 @@
--- Oyuncu servera katıldığında
+-- Oyuncu servera katildiginda
 addhook("join", "onPlayerJoin")
 function onPlayerJoin(id)
     PlayerDataService.load(id)
     sendMessage(id, "info", Lang.get(id, "welcome"))
+    if MarketSystem and MarketSystem.onPlayerLoad then
+        MarketSystem.onPlayerLoad(id)
+    end
+    if StatusSystem and StatusSystem.setStatus then
+        StatusSystem.setStatus(id, PLAYER_DATA[id].status or Config.DefaultMode, true)
+    end
 end
 
--- Oyuncu serverdan ayrıldığında
+-- Oyuncu serverdan ayrildiginda
 addhook("leave", "onPlayerLeave")
 function onPlayerLeave(id)
-    -- Çıkarken anlık pozisyon kaydediyoruz
+    -- Cikarken anlik pozisyon kaydediyoruz
     local data = PLAYER_DATA[id]
     if data then
         data.position = {
@@ -20,7 +26,7 @@ function onPlayerLeave(id)
     end
 end
 
--- Oyuncu spawn olduğunda pozisyonuna ışınlıyoruz
+-- Oyuncu spawn oldugunda pozisyonuna isinliyoruz
 addhook("spawn", "onPlayerSpawn")
 function onPlayerSpawn(id)
     local data = PLAYER_DATA[id]
@@ -40,12 +46,16 @@ function applyStats(id)
     local data = PLAYER_DATA[id]
     if not data then return end
 
+    local bonuses = EquipmentSystem and EquipmentSystem.getTotalBonuses(data) or {}
+
+    local hpStat = (data.stats.hp or 0) + (bonuses.hp or 0)
     -- HP etkisi
     local baseHealth = 100
-    local extraHealth = (data.stats.hp or 0) * 6.25
+    local extraHealth = hpStat * 6.25
     parse("setmaxhealth " .. id .. " " .. math.floor(baseHealth + extraHealth))
 
     -- Speed etkisi
-    local baseSpeed = data.stats.speed or Config.BASE_SPEED
+    local speedStat = (data.stats.speed or 0) + (bonuses.speed or 0)
+    local baseSpeed = (Config.BASE_SPEED or 100) + speedStat
     parse("speedmod " .. id .. " " .. math.floor(baseSpeed))
 end
