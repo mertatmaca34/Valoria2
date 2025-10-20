@@ -1,17 +1,17 @@
 Lang.addPack("tr", {
-    -- Karşılama
-    welcome = "Hoş geldin Valoria 2.0'a!",
+    -- Karsilama
+    welcome = "Hos geldin Valoria 2.0'a!",
 
     -- Basliklar
     caption_info = "[BILGI]: ",
     caption_warning = "[UYARI]: ",
     caption_error = "[HATA]: ",
-    caption_success = "[BAŞARI]: ",
-    caption_system = "[SİSTEM]: ",
+    caption_success = "[BASARI]: ",
+    caption_system = "[SISTEM]: ",
 
-    -- Menü Başlıkları
-    menu_main_title = "Ana Menü",
-    menu_stats = "İstatistiklerim",
+    -- Menu Basliklari
+    menu_main_title = "Ana Menu",
+    menu_stats = "Istatistiklerim",
     menu_inventory = "Envanter",
     menu_equipment = "Ekipman",
     menu_quests = "Görevlerim",
@@ -41,8 +41,8 @@ Lang.addPack("tr", {
     stat_hp = "HP",
     stat_attack = "Atak",
     stat_defense = "Defans",
-    stat_speed = "Hız",
-    stat_crit = "Kritik Şans",
+    stat_speed = "Hiz",
+    stat_crit = "Kritik Sans",
     remaining_points = "Kalan Puan",
 
     -- Stat Bilgileri
