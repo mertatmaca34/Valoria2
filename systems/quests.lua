@@ -232,6 +232,26 @@ function QuestSystem.onKill(killer, victim)
     end
 end
 
+function QuestSystem.onMonsterKilled(id, monsterId)
+    local data = ensureData(id)
+    if not data then return end
+
+    for questId, quest in pairs(QuestSystem.Definitions) do
+        if quest.type == "kill" then
+            local state = getQuestState(data, questId)
+            if state.status == "in_progress" then
+                if quest.target == "monster" then
+                    if not quest.targetMonsterId or quest.targetMonsterId == monsterId then
+                        QuestSystem.progress(id, questId, 1)
+                    end
+                elseif quest.target == "any_monster" then
+                    QuestSystem.progress(id, questId, 1)
+                end
+            end
+        end
+    end
+end
+
 function QuestSystem.onItemCollected(id, itemId, amount)
     local data = ensureData(id)
     if not data then return end

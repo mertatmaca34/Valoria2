@@ -129,7 +129,19 @@ Lang.addPack("tr", {
     quest_healer_help_complete = "Sifaci otlar icin tesekkur ediyor.",
 
     item_small_potion = "Kucuk Iyilestirme Iksiri",
+    item_small_potion_desc = "Az miktarda can iade eden basit bir iksir.",
     item_herb_green = "Yesil Ot",
+    item_herb_green_desc = "Cayirdan toplanan taze bir ot.",
+    item_iron_sword = "Demir Kilic",
+    item_iron_sword_desc = "Yeni maceracilar icin guvenilir bir demir kilic.",
+    item_leather_armor = "Deriden Zirh",
+    item_leather_armor_desc = "Hafif ve temel koruma saglar.",
+    item_forest_amulet = "Orman Tilsimi",
+    item_forest_amulet_desc = "Ormanin huzurunu uzerinde tasir.",
+    item_wolf_pelt = "Kurt Postu",
+    item_wolf_pelt_desc = "Azili bir kurttan alinmis kalin post.",
+    item_goblin_ear = "Goblin Kulagi",
+    item_goblin_ear_desc = "Goblin ustunlugunu kanitlayan bir ganimet.",
 
     -- Pazar
     market_browse = "Ilanlara Goz At",
@@ -156,5 +168,21 @@ Lang.addPack("tr", {
     market_no_listings = "Aktif ilan bulunmuyor.",
 
     -- Diger
-    menu_status_display = "Durum: Aktif"
+    menu_status_display = "Durum: Aktif",
+
+    -- NPC'ler
+    npc_generic_dialogue = "Dikkatli ol.",
+    npc_healer_name = "Koy Sifacisi",
+    npc_healer_dialogue = "Ot getir herkesi sag tutayim.",
+    npc_merchant_name = "Seyyar Satici",
+    npc_merchant_dialogue = "Altinin varsa esya saglarim.",
+    npc_guard_name = "Sehir Gardiyani",
+    npc_guard_dialogue = "Sur disinda silahini hazir tut.",
+
+    -- Canavarlar
+    monster_forest_wolf_name = "Orman Kurdu",
+    monster_cave_goblin_name = "Magara Goblini",
+    monster_defeated = "Yendin",
+    monster_damaged = "Vurulan hasar:",
+    monster_loot_drop = "Dusurulen ganimet:"
 })

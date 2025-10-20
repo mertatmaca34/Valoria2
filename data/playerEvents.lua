@@ -9,6 +9,9 @@ function onPlayerJoin(id)
     if StatusSystem and StatusSystem.setStatus then
         StatusSystem.setStatus(id, PLAYER_DATA[id].status or Config.DefaultMode, true)
     end
+    if ItemSystem and ItemSystem.restoreEquipmentVisuals then
+        ItemSystem.restoreEquipmentVisuals(id)
+    end
 end
 
 -- Oyuncu serverdan ayrildiginda
@@ -23,6 +26,9 @@ function onPlayerLeave(id)
         }
         PlayerDataService.save(id)
         PlayerDataService.remove(id)
+    end
+    if ItemSystem and ItemSystem.clearAllVisuals then
+        ItemSystem.clearAllVisuals(id)
     end
 end
 
@@ -40,6 +46,9 @@ function onPlayerSpawn(id)
     end
 
     applyStats(id)
+    if ItemSystem and ItemSystem.refreshPlayerVisuals then
+        ItemSystem.refreshPlayerVisuals(id)
+    end
 end
 
 function applyStats(id)

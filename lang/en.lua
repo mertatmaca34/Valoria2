@@ -129,7 +129,19 @@ Lang.addPack("en", {
     quest_healer_help_complete = "The healer thanks you for the herbs.",
 
     item_small_potion = "Small Healing Potion",
+    item_small_potion_desc = "A simple brew that restores a little health.",
     item_herb_green = "Green Herb",
+    item_herb_green_desc = "A fresh herb collected in the meadows.",
+    item_iron_sword = "Iron Sword",
+    item_iron_sword_desc = "A sturdy iron blade for close combat.",
+    item_leather_armor = "Leather Armor",
+    item_leather_armor_desc = "Light armor that offers basic protection.",
+    item_forest_amulet = "Forest Amulet",
+    item_forest_amulet_desc = "An amulet that carries the calm of the woods.",
+    item_wolf_pelt = "Wolf Pelt",
+    item_wolf_pelt_desc = "Thick fur taken from a fierce wolf.",
+    item_goblin_ear = "Goblin Ear",
+    item_goblin_ear_desc = "A trophy that proves your victory over a goblin.",
 
     -- Market
     market_browse = "Browse Listings",
@@ -156,5 +168,21 @@ Lang.addPack("en", {
     market_no_listings = "No listings available.",
 
     -- Misc
-    menu_status_display = "Status: Active"
+    menu_status_display = "Status: Active",
+
+    -- NPCs
+    npc_generic_dialogue = "Stay safe out there.",
+    npc_healer_name = "Village Healer",
+    npc_healer_dialogue = "Bring herbs and I will keep everyone healthy.",
+    npc_merchant_name = "Traveling Merchant",
+    npc_merchant_dialogue = "I can offer supplies if you have the coin.",
+    npc_guard_name = "Town Guard",
+    npc_guard_dialogue = "Keep your weapon ready beyond the walls.",
+
+    -- Monsters
+    monster_forest_wolf_name = "Forest Wolf",
+    monster_cave_goblin_name = "Cave Goblin",
+    monster_defeated = "You defeated",
+    monster_damaged = "Damage dealt:",
+    monster_loot_drop = "Loot acquired:"
 })

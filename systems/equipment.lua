@@ -90,6 +90,9 @@ function EquipmentSystem.equipItem(id, slotKey, inventoryIndex)
             sendMessage(id, "warning", Lang.get(id, "inventory_full"))
             return
         end
+        if ItemSystem and ItemSystem.clearEquipmentVisual then
+            ItemSystem.clearEquipmentVisual(id, slotKey)
+        end
     end
 
     data.equipment[slotKey] = {
@@ -103,6 +106,10 @@ function EquipmentSystem.equipItem(id, slotKey, inventoryIndex)
     sendMessage(id, "success", Lang.get(id, "equipment_equipped") .. " " .. item.name)
     PlayerDataService.save(id)
     applyBonuses(id)
+
+    if ItemSystem and ItemSystem.applyEquipmentVisual then
+        ItemSystem.applyEquipmentVisual(id, slotKey, item.itemId)
+    end
 end
 
 function EquipmentSystem.unequipSlot(id, slotKey)
@@ -120,6 +127,9 @@ function EquipmentSystem.unequipSlot(id, slotKey)
         sendMessage(id, "info", Lang.get(id, "equipment_unequipped") .. " " .. equipped.name)
         PlayerDataService.save(id)
         applyBonuses(id)
+        if ItemSystem and ItemSystem.clearEquipmentVisual then
+            ItemSystem.clearEquipmentVisual(id, slotKey)
+        end
     end
 end
 
