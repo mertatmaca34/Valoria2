@@ -5,7 +5,7 @@ function onServerAction(id, action)
     end
 end
 
--- Ana Menü Açıcı
+-- Ana Menu Acici
 function openMainMenu(id)
     MenuPager.show(id, "menu_main_title", {
         "menu_stats",
@@ -23,7 +23,7 @@ function openMainMenu(id)
     }, onMainMenuSelect)
 end
 
--- Ana Menüde Bir Şeye Tıklandıysa
+-- Ana Menude Bir Seye Tiklandiysa
 function onMainMenuSelect(id, index)
     local optionKeys = {
         "menu_stats",
@@ -42,7 +42,7 @@ function onMainMenuSelect(id, index)
 
     local key = optionKeys[index]
     if not key or key == "menu_empty" then
-        return -- boş tuşa tıkladıysa hiçbir şey yapma
+        return -- bos tusa tikladiysa hicbir sey yapma
     end
 
     if key == "menu_language" then
@@ -65,9 +65,9 @@ function onMainMenuSelect(id, index)
 end
 
 
--- Dil Seçim Menüsü
+-- Dil Secim Menusu
 function openLanguageMenu(id)
-    MenuPager[id] = nil -- Önce eski menü kaydını sil
+    MenuPager[id] = nil -- Once eski menu kaydini sil
     MenuPager.show(id, "menu_language", {
         "language_turkish",
         "language_english"
@@ -76,7 +76,7 @@ end
 
 
 
--- Dil Menüsünde Seçim Yapıldıysa
+-- Dil Menusunde Secim Yapildiysa
 function onLanguageSelect(id, index)
     if index == 1 then
         Lang.setPlayerLang(id, "tr")

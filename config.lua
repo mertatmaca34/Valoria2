@@ -1,11 +1,11 @@
 Config = {}
 
--- Oyuncu Başlangıç Değerleri
+-- Oyuncu Baslangic Degerleri
 Config.DefaultStats = {
     hp = 0,
     attack = 0,
     defense = 0,
-    speed = -10, -- Oyuncular -10 speed ile başlar
+    speed = -10, -- Oyuncular -10 speed ile baslar
     crit = 0
 }
 
@@ -16,10 +16,13 @@ Config.DefaultSpawnY = 100
 Config.DefaultInventoryCapacity = 20
 Config.DefaultDepotUnlocked = false
 
--- Temel Savaş ve Hareket Ayarları
 Config.BASE_SPEED = 100
 Config.CombatTagDuration = 8 -- saniye
 Config.LevelStatReward = 5
+
+-- Market Ayarlari
+Config.MarketPriceOptions = {50, 100, 250, 500}
+Config.MarketStorageFile = "sys/lua/Valoria2/database/market.lua"
 
 -- Market Ayarları
 Config.MarketPriceOptions = {50, 100, 250, 500}
@@ -40,7 +43,7 @@ Config.Statuses = {
     combat = { nameKey = "status_combat", descriptionKey = "status_combat_desc", locked = true }
 }
 
--- Görev Ayarları
+-- Gorev Ayarlari
 Config.QuestDefinitions = {
     first_steps = {
         id = "first_steps",
@@ -77,5 +80,5 @@ Config.QuestDefinitions = {
     }
 }
 
--- Dil Ayarları
+-- Dil Ayarlari
 Config.DefaultLanguage = "en"

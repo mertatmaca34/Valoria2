@@ -62,11 +62,11 @@ function MenuPager.menuFromTable(id, title, options)
     menu(id, arg)
 end
 
--- Scroll tuşlarını bind edelim
+-- Scroll tuslarini bind edelim
 addbind("mwheelup")
 addbind("mwheeldown")
 
--- Scroll ile sayfa değiştirme
+-- Scroll ile sayfa degistirme
 addhook("key", "onMenuPagerScroll")
 function onMenuPagerScroll(id, key)
     local data = MenuPager[id]
@@ -79,14 +79,14 @@ function onMenuPagerScroll(id, key)
     end
 end
 
--- Menüde bir şey tıklanınca
+-- Menude bir sey tiklaninca
 addhook("menu", "onMenuPagerClick")
 function onMenuPagerClick(id, title, button)
-    if button == 0 then return end -- 0'a basıldıysa (kapattıysa) işleme gerek yok
+    if button == 0 then return end -- 0'a basildiysa (kapattiysa) isleme gerek yok
     MenuPager.handleClick(id, title, button)
 end
 
--- Menü kapatıldığında aktif kaydı silelim
+-- Menu kapatildiginda aktif kaydi silelim
 addhook("menu", "onMenuPagerMenuClose")
 function onMenuPagerMenuClose(id, title, button)
     if button == 0 then

@@ -1,4 +1,4 @@
--- Oyuncu servera katıldığında
+-- Oyuncu servera katildiginda
 addhook("join", "onPlayerJoin")
 function onPlayerJoin(id)
     PlayerDataService.load(id)
@@ -11,10 +11,10 @@ function onPlayerJoin(id)
     end
 end
 
--- Oyuncu serverdan ayrıldığında
+-- Oyuncu serverdan ayrildiginda
 addhook("leave", "onPlayerLeave")
 function onPlayerLeave(id)
-    -- Çıkarken anlık pozisyon kaydediyoruz
+    -- Cikarken anlik pozisyon kaydediyoruz
     local data = PLAYER_DATA[id]
     if data then
         data.position = {
@@ -26,7 +26,7 @@ function onPlayerLeave(id)
     end
 end
 
--- Oyuncu spawn olduğunda pozisyonuna ışınlıyoruz
+-- Oyuncu spawn oldugunda pozisyonuna isinliyoruz
 addhook("spawn", "onPlayerSpawn")
 function onPlayerSpawn(id)
     local data = PLAYER_DATA[id]

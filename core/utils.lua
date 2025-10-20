@@ -1,4 +1,4 @@
--- Tek oyuncuya mesaj gönder
+-- Tek oyuncuya mesaj gonder
 function sendMessage(id, msgType, text)
     local colorSet = COLORS[msgType] or COLORS.info
     local captionColor = "\169" .. colorSet.caption
@@ -7,7 +7,7 @@ function sendMessage(id, msgType, text)
     msg2(id, captionColor .. caption .. textColor .. text)
 end
 
--- Tüm oyunculara mesaj gönder
+-- Tum oyunculara mesaj gonder
 function sendMessageAll(msgType, langKey)
     for _, id in pairs(player(0, "table")) do
         local text = Lang.get(id, langKey)
@@ -15,7 +15,7 @@ function sendMessageAll(msgType, langKey)
     end
 end
 
--- Dosya var mı kontrol eder
+-- Dosya var mi kontrol eder
 function fileExists(path)
     local f = io.open(path, "r")
     if f then
@@ -26,7 +26,7 @@ function fileExists(path)
     end
 end
 
--- Bir table'ın derin kopyasını oluşturur
+-- Bir table'in derin kopyasini olusturur
 function table.deepCopy(tbl)
     if type(tbl) ~= "table" then return tbl end
     local copy = {}
@@ -40,7 +40,7 @@ function table.deepCopy(tbl)
     return copy
 end
 
--- Bir table'ı dosyaya kaydeder (Lua formatında)
+-- Bir table'i dosyaya kaydeder (Lua formatinda)
 function table.save(tbl, path)
     local f = io.open(path, "w+")
     if not f then
@@ -51,7 +51,7 @@ function table.save(tbl, path)
     f:close()
 end
 
--- Bir table'ı Lua kodu gibi serialize eder (stringe çevirir)
+-- Bir table'i Lua kodu gibi serialize eder (stringe cevirir)
 function table.serialize(tbl, indent)
     indent = indent or ""
     local str = "{\n"

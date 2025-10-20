@@ -1,2 +1,2 @@
 # Valoria2
-CS2D üzerinde çalışan, tam modüler yapıya sahip, dinamik statlar ve etkileşimli menülerle desteklenen bir yeni nesil RPG
+CS2D uzerinde calisan, tam moduler yapiya sahip, dinamik statlar ve etkilesimli menulerle desteklenen bir yeni nesil RPG
